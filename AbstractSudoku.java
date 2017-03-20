@@ -7,16 +7,19 @@
 import java.util.Random;
 public abstract class AbstractSudoku {
 	protected int[][] board;
+	protected int[][] puzzle;
 	/**
 	 * Constructor for a sudoku board
 	 * fills it with zereos
 	 */
 	protected AbstractSudoku(){
 		board = new int[9][9];
+		puzzle = new int[9][9];
 		for(int i = 0; i < 9; i++){
 			for(int j = 0; j < 9; j++){
 				board[i][j] = 0;	//Sets all values to zero
-			}						//Zero is used in place of null for easier comparison
+				puzzle[i][j] = 0;	//Zero is used in place of null for easier comparison
+			}						
 		}
 	}
 	/**
@@ -49,7 +52,6 @@ public abstract class AbstractSudoku {
 			}
 		}
 		return true;
-		
 	}
 	/**
 	 * @param value test value

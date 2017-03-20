@@ -16,7 +16,6 @@ public class SudokuImage {
 	private String filename;
 	private final int SIDE = 631;
 	private final int NINTH = SIDE / 9;
-
 	/**
 	 * Constructor for sudoku images
 	 * @param data the sudoku data
