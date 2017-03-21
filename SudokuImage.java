@@ -19,11 +19,11 @@ public class SudokuImage {
 	/**
 	 * Constructor for sudoku images
 	 * @param data the sudoku data
-	 * @param filename name of image file
+	 * @param filename name of image file INCLUDING the path
 	 */
 	public SudokuImage(int[][] data, String filename){
 		this.sudoku = data;
-		this.filename = "a:\\" + filename + ".PNG";
+		this.filename = filename + ".PNG";
 	}
 	/**
 	 * Creates an Image from the given Sudoku board

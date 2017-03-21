@@ -27,7 +27,7 @@ public class TweetQueue {
 			head = node;
 		}
 		TweetNode tweet = head;
-		while(tweet.next != null){
+		while(tweet.next != null){		//Loop until the end
 			tweet = tweet.next;
 		}
 		tweet.next = node;
@@ -43,7 +43,7 @@ public class TweetQueue {
 		}
 		int i = 0;
 		TweetNode tweet = head;
-		while(tweet.next != null){
+		while(tweet.next != null){		//Loop until the end
 			if(i < index){
 				tweet = tweet.next;
 				i++;
@@ -63,7 +63,7 @@ public class TweetQueue {
 		}
 		int i = 0;
 		TweetNode tweet = head;
-		while(tweet.next != null){
+		while(tweet.next != null){		//Loop until the end
 			if(i < index){
 				tweet = tweet.next;
 				i++;
@@ -90,8 +90,8 @@ public class TweetQueue {
 		}else{
 			TweetNode node = head;
 			while(node != null){
-				node = node.next;
 				count++;
+				node = node.next;
 			}
 			return count;
 		}
