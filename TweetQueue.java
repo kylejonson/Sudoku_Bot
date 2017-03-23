@@ -2,6 +2,7 @@
  * A queue for the tweets
  * @author Kyle Jonson
  * @since 3/14/2017
+ * @version 1.0.1
  */
 public class TweetQueue {
 	/**
@@ -24,13 +25,12 @@ public class TweetQueue {
 	 */
 	public void add(TweetNode node){
 		if(head == null){
-			head = node;
+			this.head = node;
 		}
 		TweetNode tweet = head;
-		while(tweet.next != null){		//Loop until the end
-			tweet = tweet.next;
+		while((tweet = tweet.next) != null){
+			tweet.next = node;
 		}
-		tweet.next = node;
 	}
 	/**
 	 * Returns the TweetNode at an index
@@ -71,7 +71,7 @@ public class TweetQueue {
 				break;
 			}
 		}
-		if(tweet == head){
+		if(tweet.equals(head)){
 			head = head.next;
 		}else if(tweet.next.next == null){
 			tweet.next = null;
@@ -84,16 +84,13 @@ public class TweetQueue {
 	 * @return int of the number of elements
 	 */
 	public int size(){
-		int count = 0;
-		if(head == null){
-			return count;
+		return recursiveSize(head);
+	}
+	private int recursiveSize(TweetNode node){
+		if(node == null){
+			return 0;
 		}else{
-			TweetNode node = head;
-			while(node != null){
-				count++;
-				node = node.next;
-			}
-			return count;
+			return 1 + recursiveSize(node.next);
 		}
 	}
 }
@@ -115,5 +112,15 @@ class TweetNode{
 		this.puzzle = puzzle;
 		this.next = next;
 	}
-	
+	public boolean equals(TweetNode node){
+		for(int i = 0; i < 9; i++){
+			for(int j = 0; j < 9; j++){
+				if(puzzle[i][j] != node.puzzle[i][j]
+					|| solution[i][j] != node.solution[i][j]){
+					return false;
+				}
+			}
+		}
+		return true;
+	}
 }

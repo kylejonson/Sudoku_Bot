@@ -1,4 +1,3 @@
-
 /**
  *Helper Class for the TwitterBot Class
  *@author Kyle Jonson

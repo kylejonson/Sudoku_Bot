@@ -23,7 +23,7 @@ public class SudokuImage {
 	 */
 	public SudokuImage(int[][] data, String filename){
 		this.sudoku = data;
-		this.filename = filename + ".PNG";
+		this.filename = filename + ".png";
 	}
 	/**
 	 * Creates an Image from the given Sudoku board
@@ -31,8 +31,9 @@ public class SudokuImage {
 	public void makeImage(){
 		BufferedImage bi = new BufferedImage(SIDE, SIDE, BufferedImage.TYPE_INT_ARGB);
 		Graphics2D g = bi.createGraphics();
-		g.setPaint(Color.black);
-		Font font = new Font("Helvetica", 0, 50);
+		g.setColor(Color.BLACK);
+		g.setPaint(Color.BLACK);
+		Font font = new Font("Arial", 0, 50);
 		g.setFont(font);
 		writeGrid(g);
 		writeSudoku(g);
