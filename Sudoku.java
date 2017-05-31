@@ -81,6 +81,7 @@ public class Sudoku extends AbstractSudoku{
 			int col = rand.nextInt(9);
 			if(count() > 40){
 				temp1 = board[row][col];	//Over 40 elements it removes with rotational symmetry
+								/*TODO: This is symmetry along a path y=-x. Make this actual rotational symmetry*/
 				temp2 = board[col][row];
 				board[row][col] = 0;
 				board[col][row] = 0;
